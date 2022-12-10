@@ -16,4 +16,9 @@ describe("Tests for every function", () => {
     it("should pass predicate check and return should true", () =>{
         expect(every([true,'false'], Boolean)).to.equal(true)
     });
+     it("Should throw TypeError if argument is not a predicate", () =>{
+        expect(function() {
+        every('true', 'true');
+    }).to.throw(TypeError);
+ });
 })
