@@ -16,4 +16,10 @@ describe("Tests for drop function", () => {
         expect(drop(3,"maito")).to.eql([])
     });
 
+    it("Should throw TypeError when used wrongly typed arguments ", () =>{
+        expect(function() {
+        drop('true', 'true');
+            }).to.throw(TypeError);
+    });
+
 })

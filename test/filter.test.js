@@ -8,5 +8,11 @@ describe("Tests for filter function", () => {
         expect(filter([{'tuote': 'peruna', 'onkoJuures' : true }, {'tuote': 'mansikka', 'onkoJuures' : false }], value => value.onkoJuures))
         .to.eql([{'tuote': 'peruna', 'onkoJuures' : true }])
     });
+
+    it("Should throw TypeError when used wrongly typed arguments ", () =>{
+        expect(function() {
+        endsWith('true', 'true');
+            }).to.throw(TypeError);
+    });
     
 })
