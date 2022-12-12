@@ -48,4 +48,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
           path-to-lcov: ./coverage/lcov.info
+          file: ./coverage/lcov.info
+          
           
