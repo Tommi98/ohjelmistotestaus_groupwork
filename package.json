@@ -7,7 +7,7 @@
   "scripts": {
     "test-cov": "npm run mocha",
     "test": "mocha",
-    "test-coveralls": "npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
+    "test-coveralls": "npm run mocha && shx cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js --verbose"
   },
   "author": "Tommi ja Emma",
   "license": "MIT",
