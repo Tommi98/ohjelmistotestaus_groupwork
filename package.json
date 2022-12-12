@@ -5,8 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "mocha": "_mocha -b -R spec",
+    "test-cov": "npm run mocha",
     "test": "mocha",
-    "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
+    "test-coveralls": "npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
   },
   "author": "Tommi ja Emma",
   "license": "MIT",
@@ -16,7 +18,14 @@
     "mocha": "^8.4.0",
     "mocha-lcov-reporter": "^1.3.0"
   },
+  "dependencies": {
+    "js-yaml": "^3.13.1",
+    "lcov-parse": "^1.0.0"
+  },
   "optionalDependencies": {
     "fsevents": "*"
-  }
+  },
+  "files": [
+    "node_modules/coveralls/bin/coveralls.js"
+  ]
 }
