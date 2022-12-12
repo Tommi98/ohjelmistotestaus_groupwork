@@ -4,7 +4,7 @@ const expect = chai.expect
 
 describe("Tests for castArray function", () => {
     it("Test for empty call", () =>{
-        expect(castArray()).deep.to.equal([]);
+        expect(castArray()).to.eql([]);
     });
     it("Test for undefined argument", () =>{
         expect(castArray(undefined)).deep.to.equal([undefined]);
