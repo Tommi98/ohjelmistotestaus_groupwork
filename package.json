@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "mocha": "_mocha -b -R spec",
-    "test-cov": "npm run mocha",
+    "test-cov": "nyc npm run mocha",
     "test": "mocha",
-    "test-coveralls": "npm run mocha && shx cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js --verbose"
+    "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js --verbose"
   },
   "author": "Tommi ja Emma",
   "license": "MIT",
@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "js-yaml": "^3.13.1",
-    "lcov-parse": "^1.0.0"
+    "lcov-parse": "^1.0.0",
+    "nyc": "^15.1.0"
   },
   "optionalDependencies": {
     "fsevents": "*"
