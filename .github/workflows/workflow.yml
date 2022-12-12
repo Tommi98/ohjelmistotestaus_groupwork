@@ -1,6 +1,6 @@
-on: ["push","pull_request"]
+on: ["push", "pull_request"]
 
-name: build
+name: Test Coveralls Parallel
 
 jobs:
   test:
@@ -11,27 +11,31 @@ jobs:
           - 1
           - 2
     steps:
-      - uses: actions/checkout@master
-      - uses: actions/setup-node@master
-        with:
-          version: 10.x
-      - run: npm install
-      - run: make test-coverage
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.0
-        env:
-          NODE_COVERALLS_DEBUG: 1
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel: true
-          flag-name: run-${{ matrix.test_number }}
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@master
+      with:
+        version: 10.x
+
+    - name: npm install
+      run: npm install
+
+    - name: Test ${{ matrix.test_number }}
+      run: make init
+      run: make test-coverage-${{ matrix.test_number }}
+    - name: Coveralls Parallel
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+        flag-name: run-${{ matrix.test_number }}
+        parallel: true
 
   finish:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@v1.1.0
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
+    - name: Coveralls Finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.github_token }}
+        parallel-finished: true
