@@ -5,7 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "mocha": "_mocha -b -R spec",
     "test-cov": "npm run mocha",
     "test": "mocha",
     "test-coveralls": "npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
