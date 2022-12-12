@@ -20,8 +20,9 @@ jobs:
     - name: npm install
       run: npm install
 
-    - name: Test ${{ matrix.test_number }}
+    - name: make init
       run: make init
+    - name: Test ${{ matrix.test_number }}
       run: make test-coverage-${{ matrix.test_number }}
     - name: Coveralls Parallel
       uses: coverallsapp/github-action@master
