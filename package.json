@@ -28,6 +28,6 @@
     "fsevents": "*"
   },
   "files": [
-    "node_modules/coveralls/bin/coveralls.js"
+    "bin/coveralls.js"
   ]
 }
