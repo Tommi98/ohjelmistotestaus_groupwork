@@ -8,8 +8,8 @@
     "mocha": "_mocha -b -R spec",
     "test-cov": "nyc npm run mocha",
     "test": "set NODE_ENV=test && mocha",
-    "test-coveralls": "set NODE_ENV=test && nyc npm run mocha && shx cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js -v"
-
+    "test-coveralls": "set NODE_ENV=test && nyc npm run mocha && shx cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js -v",
+    "coverage": "set NODE_ENV=test && nyc npm test && nyc report --reporter=text-lcov | node ./node_modules/coveralls/bin/coveralls.js --verbose"
   },
   "author": "Tommi ja Emma",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "shx": "^0.3.4"
   },
   "dependencies": {
+    "coverage": "^0.4.1",
     "js-yaml": "^3.13.1",
     "lcov-parse": "^1.0.0",
     "nyc": "^15.1.0"
