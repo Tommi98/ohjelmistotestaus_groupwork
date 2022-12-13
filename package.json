@@ -7,8 +7,9 @@
   "scripts": {
     "mocha": "_mocha -b -R spec",
     "test-cov": "nyc npm run mocha",
-    "test": "mocha",
-    "test-coveralls": "nyc npm run mocha && shx cat ./coverage/lcov.info | node node_modules/coveralls/bin/coveralls.js --verbose"
+    "test": "set NODE_ENV=test && mocha",
+    "test-coveralls": "set NODE_ENV=test && nyc npm run mocha && shx cat ./coverage/lcov.info | node ./node_modules/coveralls/bin/coveralls.js -v"
+
   },
   "author": "Tommi ja Emma",
   "license": "MIT",
