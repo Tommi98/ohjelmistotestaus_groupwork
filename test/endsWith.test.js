@@ -20,10 +20,10 @@ describe("Tests for endsWith function", () => {
         expect(endsWith('maito','o',5)).to.equal(true)
     });
 
-    // it("Should throw TypeError when used wrongly typed arguments ", () =>{
-    //     expect(function() {
-    //     endsWith('true', 'true', 'true');
-    //         }).to.throw(TypeError);
-    // });
+    it("Should throw TypeError when used wrongly typed arguments ", () =>{
+        expect(function() {
+        endsWith('true', 'true', 'true');
+            }).to.throw(TypeError);
+    });
 
 })
