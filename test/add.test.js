@@ -13,9 +13,9 @@ describe("Tests for add function", () => {
  it("Add negative (-) number to negative (-) number", () =>{
     expect(add(-5,-7)).to.equal(-12)
  });
-//  it("Should throw TypeError if argument is not a number", () =>{
-//     expect(function() {
-//         add(5,"s");
-//     }).to.throw(TypeError);
-//  });
+ it("Should throw TypeError if argument is not a number", () =>{
+    expect(function() {
+        add(5,"s");
+    }).to.throw(TypeError);
+ });
 })

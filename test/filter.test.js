@@ -9,11 +9,11 @@ describe("Tests for filter function", () => {
         .to.eql([{'tuote': 'peruna', 'onkoJuures' : true }])
     });
 
-    // it("Should throw TypeError when used wrongly typed arguments ", () =>{
-    //     expect(function() {
-    //     endsWith('true', 'true');
-    //         }).to.throw(TypeError);
-    // });
+    it("Should throw TypeError when used wrongly typed arguments ", () =>{
+        expect(function() {
+        endsWith('true', 'true');
+            }).to.throw(TypeError);
+    });
     
     
 })
