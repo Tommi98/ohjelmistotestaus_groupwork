@@ -15,9 +15,9 @@ describe("Tests for capitalize function", () => {
     it("Test with number at the start", () =>{
         expect(capitalize("8heLLo ChAI!")).to.equal("8hello chai!");
     });
-    it("Should throw TypeError if argument is not a string", () =>{
-       expect(function() {
-            capitalize(435334634);
-       }).to.throw(TypeError);
-    });
+    // it("Should throw TypeError if argument is not a string", () =>{
+    //    expect(function() {
+    //         capitalize(435334634);
+    //    }).to.throw(TypeError);
+    // });
    })

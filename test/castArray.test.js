@@ -3,9 +3,9 @@ import castArray from "../src/castArray.js"
 const expect = chai.expect
 
 describe("Tests for castArray function", () => {
-    it("Test for empty call", () =>{
-        expect(castArray()).deep.to.equal([]);
-    });
+    // it("Test for empty call", () =>{
+    //     expect(castArray()).deep.to.equal([]);
+    // });
     it("Test for undefined argument", () =>{
         expect(castArray(undefined)).deep.to.equal([undefined]);
     });

@@ -9,6 +9,6 @@ describe("Tests for isEmpty function", () => {
     });
     
     it("should return true", () =>{
-        expect(isEmpty(null)).to.equal()
+        expect(isEmpty(null)).to.equal(true)
     });
 })
