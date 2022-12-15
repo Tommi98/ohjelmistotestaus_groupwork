@@ -9,7 +9,7 @@
     "test-cov": "c8 npm run mocha",
     "test-coveralls": "c8 npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
     "test2": "npm run mocha",
-    "test": "c8 --reporter=text mocha",
+    "test": "c8 --reporter=text --reporter=lcov mocha ",
     "coverage" : "c8 report --reporter=lcov | coveralls"
   },
   "all" : true,
