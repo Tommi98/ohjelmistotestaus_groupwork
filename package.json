@@ -5,12 +5,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint": "xo",
     "mocha": "_mocha -b -R spec",
     "test-cov": "c8 npm run mocha",
     "test-coveralls": "c8 npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose",
-    "test": "npm run lint && npm run mocha"
+    "test2": "npm run mocha",
+    "test": "c8 --reporter=text mocha",
+    "coverage" : "c8 report --reporter=lcov | coveralls"
   },
+  "all" : true,
   "author": "Tommi ja Emma",
   "license": "MIT",
   "devDependencies": {

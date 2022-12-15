@@ -27,7 +27,10 @@ jobs:
         run: npm install # switch to `npm ci` when Node.js 6 support is dropped
 
       - name: Run tests
-        run: npm run test-cov
+        run: npm run test
+
+      - name: Run coverage
+        run: npm run coverage
 
       - name: Coveralls
         uses: coverallsapp/github-action@master
