@@ -11,7 +11,7 @@ describe("Tests for filter function", () => {
 
     it("Should throw TypeError when used wrongly typed arguments ", () =>{
         expect(function() {
-        endsWith('true', 'true');
+        filter('true', 'true');
             }).to.throw(TypeError);
     });
     
